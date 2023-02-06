@@ -1,4 +1,4 @@
-package com.seabattle.entities.rules.ship_build;
+package com.seabattle.entities.rules.build;
 
 import java.util.List;
 
