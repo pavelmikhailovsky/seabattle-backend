@@ -40,7 +40,7 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
                 throw new ShipIntegrityException("The ship must be positioned vertically or horizontally");
             }
 
-            isVerticalOrder = verticalOrder(currentCoordinate, pastCoordinate);
+            isVerticalOrder = verticalOrder(currentCoordinate, pastCoordinate, i);
             pastCoordinate = currentCoordinate;
         }
 
@@ -92,7 +92,40 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
         return isOrder;
     }
 
-    private boolean verticalOrder(String currentCoordinate, String pastCoordinate) {
-        return false;
+    private boolean verticalOrder(String currentCoordinate, String pastCoordinate, int iterationNumber) {
+        boolean isOrder = true;
+
+        char currentLetter = currentCoordinate.charAt(0);
+        int currentInteger = Integer.parseInt(currentCoordinate.substring(1));
+
+        char pastLetter = pastCoordinate.charAt(0);
+        int pastInteger = Integer.parseInt(pastCoordinate.substring(1));
+
+        if (pastInteger != currentInteger) return false;
+
+        if (isVerticalOrderShipsFromDownUp) {
+            char nextUpLetter = (char) (pastLetter - 1);
+
+                if (TOP_LETTER_BOARD_ASCII == pastLetter || nextUpLetter != currentLetter) {
+
+                    if (iterationNumber > 1) {
+                        isOrder = false;
+                    } else {
+                        isVerticalOrderShipsFromDownUp = false;
+
+                    }
+
+                }
+        }
+
+        if (!isVerticalOrderShipsFromDownUp) {
+            char nextDownLetter = (char) (pastLetter + 1);
+
+            if (BOTTOM_LETTER_BOARD_ASCII == pastLetter || nextDownLetter != currentLetter) {
+                isOrder = false;
+            }
+        }
+
+        return isOrder;
     }
 }
