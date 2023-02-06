@@ -2,6 +2,7 @@ package com.seabattle.entities.rules.ship_build;
 
 import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
+import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
 import com.seabattle.entities.rules.ship_build.exceptions.ShipIntegrityException;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
     private boolean isVerticalOrderShipsFromDownUp = true;
 
     @Override
-    public boolean check(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) throws ShipIntegrityException{
+    public boolean check(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) throws ShipBuildingException {
 
         String pastCoordinate = coordinates.stream().findFirst().get();
         String currentCoordinate;
