@@ -50,21 +50,21 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
         boolean isOrder = true;
 
         char currentLetter = currentCoordinate.charAt(0);
-        String currentInteger = currentCoordinate.substring(1);
+        int currentInteger = Integer.parseInt(currentCoordinate.substring(1));
 
         char pastLetter = pastCoordinate.charAt(0);
-        String pastInteger = pastCoordinate.substring(1);
+        int pastInteger = Integer.parseInt(pastCoordinate.substring(1));
 
         if (currentLetter != pastLetter) return false;
 
         if (isHorizontalOrderShipsFromLeftRight) {
 
-            if (BOARD_MAX_INTEGER != Integer.parseInt(pastInteger)) {
-                int nextLeftInteger = Integer.parseInt(pastInteger) + 1;
+            if (BOARD_MAX_INTEGER != pastInteger) {
+                int nextRightInteger = pastInteger + 1;
 
-                if(nextLeftInteger != Integer.parseInt(currentInteger)) {
+                if (nextRightInteger != currentInteger) {
 
-                    if (Integer.parseInt(pastInteger) - 1 == Integer.parseInt(currentInteger) && iterationNumber == 1) {
+                    if (pastInteger - 1 == currentInteger && iterationNumber == 1) {
                         isHorizontalOrderShipsFromLeftRight = false;
                     } else {
                         isOrder = false;
@@ -72,7 +72,7 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
 
                 }
 
-            } else if (Integer.parseInt(pastInteger) - 1 == Integer.parseInt(currentInteger)) {
+            } else if (pastInteger - 1 == currentInteger) {
                 isHorizontalOrderShipsFromLeftRight = false;
             } else {
                 isOrder = false;
@@ -81,8 +81,11 @@ public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
         }
 
         if (!isHorizontalOrderShipsFromLeftRight) {
-            int leftCoordinateInt = Integer.parseInt(pastInteger) - 1;
+            int leftCoordinateInt = pastInteger - 1;
 
+            if (BOARD_MIN_INTEGER > leftCoordinateInt || leftCoordinateInt != currentInteger) {
+                isOrder = false;
+            }
         }
 
         return isOrder;

@@ -1,4 +1,7 @@
-package com.seabattle.entities.rules.build;
+package com.seabattle.entities.rules.ship_build;
+
+import com.seabattle.entities.dto.Coordinate;
+import com.seabattle.entities.dto.DeckShip;
 
 import java.util.List;
 
