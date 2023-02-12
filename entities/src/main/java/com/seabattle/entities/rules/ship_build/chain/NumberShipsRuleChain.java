@@ -1,4 +1,4 @@
-package com.seabattle.entities.rules.ship_build;
+package com.seabattle.entities.rules.ship_build.chain;
 
 import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
