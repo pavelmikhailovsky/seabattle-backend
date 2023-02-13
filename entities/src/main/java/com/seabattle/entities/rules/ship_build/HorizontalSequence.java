@@ -2,7 +2,7 @@ package com.seabattle.entities.rules.ship_build;
 
 public class HorizontalSequence extends Sequence {
 
-    private boolean isHorizontalOrderShipsFromLeftRight = true;
+    private boolean isHorizontalSequenceShipsFromLeftRight = true;
 
     @Override
     public boolean check(String currentCoordinate, String pastCoordinate, int iterationNumber) {
@@ -12,7 +12,7 @@ public class HorizontalSequence extends Sequence {
 
         if (currentLetter != pastLetter) return false;
 
-        if (isHorizontalOrderShipsFromLeftRight) {
+        if (isHorizontalSequenceShipsFromLeftRight) {
 
             if (Board.MAX_INTEGER.getI() != pastInteger) {
                 int nextRightInteger = pastInteger + 1;
@@ -20,7 +20,7 @@ public class HorizontalSequence extends Sequence {
                 if (nextRightInteger != currentInteger) {
 
                     if (pastInteger - 1 == currentInteger && iterationNumber == 1) {
-                        isHorizontalOrderShipsFromLeftRight = false;
+                        isHorizontalSequenceShipsFromLeftRight = false;
                     } else {
                         isSequence = false;
                     }
@@ -28,13 +28,13 @@ public class HorizontalSequence extends Sequence {
                 }
 
             } else if (pastInteger - 1 == currentInteger) {
-                isHorizontalOrderShipsFromLeftRight = false;
+                isHorizontalSequenceShipsFromLeftRight = false;
             } else {
                 isSequence = false;
             }
         }
 
-        if (!isHorizontalOrderShipsFromLeftRight) {
+        if (!isHorizontalSequenceShipsFromLeftRight) {
             int leftCoordinateInt = pastInteger - 1;
 
             if (Board.MIN_INTEGER.getI() > leftCoordinateInt || leftCoordinateInt != currentInteger) {

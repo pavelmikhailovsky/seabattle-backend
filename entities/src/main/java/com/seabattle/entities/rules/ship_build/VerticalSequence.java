@@ -2,7 +2,7 @@ package com.seabattle.entities.rules.ship_build;
 
 public class VerticalSequence extends Sequence {
 
-    private boolean isVerticalOrderShipsFromDownUp = true;
+    private boolean isVerticalSequenceShipsFromDownUp = true;
 
     @Override
     public boolean check(String currentCoordinate, String pastCoordinate, int iterationNumber) {
@@ -12,7 +12,7 @@ public class VerticalSequence extends Sequence {
 
         if (pastInteger != currentInteger) return false;
 
-        if (isVerticalOrderShipsFromDownUp) {
+        if (isVerticalSequenceShipsFromDownUp) {
             char nextUpLetter = (char) (pastLetter - 1);
 
             if (Board.TOP_LETTER_ASCII.getI() == pastLetter || nextUpLetter != currentLetter) {
@@ -20,13 +20,13 @@ public class VerticalSequence extends Sequence {
                 if (iterationNumber > 1) {
                     isSequence = false;
                 } else {
-                    isVerticalOrderShipsFromDownUp = false;
+                    isVerticalSequenceShipsFromDownUp = false;
                 }
 
             }
         }
 
-        if (!isVerticalOrderShipsFromDownUp) {
+        if (!isVerticalSequenceShipsFromDownUp) {
             char nextDownLetter = (char) (pastLetter + 1);
 
             if (Board.BOTTOM_LETTER_ASCII.getI() == pastLetter || nextDownLetter != currentLetter) {
