@@ -12,8 +12,6 @@ import java.util.List;
 
 public class ShipIntegrityRuleChain extends ShipBuildingRuleChain {
 
-    private boolean isVerticalOrderShipsFromDownUp = true;
-
     private final Sequence horizontalSequence;
     private final Sequence verticalSequence;
 
