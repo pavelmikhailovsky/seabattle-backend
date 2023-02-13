@@ -8,10 +8,10 @@ public class DeckShip {
     private List<Coordinate> damageCoordinates;
     private boolean isSank;
 
-    public DeckShip(List<Coordinate> coordinates, List<Coordinate> damageCoordinates, boolean isSank) {
+    public DeckShip(List<Coordinate> coordinates, List<Coordinate> damageCoordinates) {
         this.coordinates = coordinates;
         this.damageCoordinates = damageCoordinates;
-        this.isSank = isSank;
+        this.isSank = false;
     }
 
     public List<Coordinate> getCoordinates() {
