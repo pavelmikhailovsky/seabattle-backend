@@ -2,12 +2,10 @@ package com.seabattle.entities.rules.ship_build.chain;
 
 import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
-import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
 import com.seabattle.entities.rules.ship_build.exceptions.ShipIntegrityException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
