@@ -14,7 +14,7 @@ public class HorizontalSequence extends Sequence {
 
         if (isHorizontalSequenceShipsFromLeftRight) {
 
-            if (Board.MAX_INTEGER.getI() != pastInteger) {
+            if (Board.MARKUP_MAX_INTEGER.getI() != pastInteger) {
                 int nextRightInteger = pastInteger + 1;
 
                 if (nextRightInteger != currentInteger) {
@@ -37,7 +37,7 @@ public class HorizontalSequence extends Sequence {
         if (!isHorizontalSequenceShipsFromLeftRight) {
             int leftCoordinateInt = pastInteger - 1;
 
-            if (Board.MIN_INTEGER.getI() > leftCoordinateInt || leftCoordinateInt != currentInteger) {
+            if (Board.MARKUP_MIN_INTEGER.getI() > leftCoordinateInt || leftCoordinateInt != currentInteger) {
                 isSequence = false;
             }
         }

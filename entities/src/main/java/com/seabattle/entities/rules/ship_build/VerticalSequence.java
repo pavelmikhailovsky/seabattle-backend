@@ -15,7 +15,7 @@ public class VerticalSequence extends Sequence {
         if (isVerticalSequenceShipsFromDownUp) {
             char nextUpLetter = (char) (pastLetter - 1);
 
-            if (Board.TOP_LETTER_ASCII.getI() == pastLetter || nextUpLetter != currentLetter) {
+            if (Board.MARKUP_TOP_LETTER_ASCII.getI() == pastLetter || nextUpLetter != currentLetter) {
 
                 if (iterationNumber > 1) {
                     isSequence = false;
@@ -29,7 +29,7 @@ public class VerticalSequence extends Sequence {
         if (!isVerticalSequenceShipsFromDownUp) {
             char nextDownLetter = (char) (pastLetter + 1);
 
-            if (Board.BOTTOM_LETTER_ASCII.getI() == pastLetter || nextDownLetter != currentLetter) {
+            if (Board.MARKUP_BOTTOM_LETTER_ASCII.getI() == pastLetter || nextDownLetter != currentLetter) {
                 isSequence = false;
             }
         }
