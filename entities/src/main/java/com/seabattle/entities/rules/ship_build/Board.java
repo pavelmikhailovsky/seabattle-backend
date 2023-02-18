@@ -10,7 +10,9 @@ public enum Board {
     NUMBER_SINGLE_DECK_SHIP(4),
     NUMBER_DOUBLE_DECK_SHIP(3),
     NUMBER_TREE_DECK_SHIP(2),
-    NUMBER_FOUR_DECK_SHIP(1);
+    NUMBER_FOUR_DECK_SHIP(1),
+
+    DISTANCE_BETWEEN_SHIPS(1);
 
     private int i;
 
