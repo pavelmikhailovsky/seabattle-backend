@@ -32,7 +32,7 @@ public class CoordinatesAroundFutureShip {
             char coordinateLetter = shipCoordinate.charAt(0);
             int coordinateNumber = Integer.parseInt(shipCoordinate.substring(1));
 
-            if (CoordinatesGroups.mostAngular(shipCoordinate)) {
+            if (CoordinateGroups.mostAngular(shipCoordinate)) {
 
                 if (shipCoordinate.equals(TOP_LEFT_COORDINATE)) {
 
@@ -60,22 +60,22 @@ public class CoordinatesAroundFutureShip {
 
                 }
 
-            } else if(CoordinatesGroups.topmostHorizontal(coordinateLetter)) {
+            } else if(CoordinateGroups.topmostHorizontal(coordinateLetter)) {
 
                 creatingHorizontalCoordinates(coordinateLetter, coordinateNumber);
                 creatingCoordinatesBelowCurrentOne(coordinateLetter, coordinateNumber);
 
-            } else if(CoordinatesGroups.lowestHorizontal(coordinateLetter)) {
+            } else if(CoordinateGroups.lowestHorizontal(coordinateLetter)) {
 
                 creatingHorizontalCoordinates(coordinateLetter, coordinateNumber);
                 creatingCoordinatesAboveCurrentOne(coordinateLetter, coordinateNumber);
 
-            } else if(CoordinatesGroups.leftmostVertical(coordinateNumber)) {
+            } else if(CoordinateGroups.leftmostVertical(coordinateNumber)) {
 
                 creatingVerticalCoordinates(coordinateLetter, coordinateNumber);
                 creatingVerticalCoordinatesRightCurrentOne(coordinateLetter, coordinateNumber);
 
-            } else if(CoordinatesGroups.rightmostVertical(coordinateNumber)) {
+            } else if(CoordinateGroups.rightmostVertical(coordinateNumber)) {
 
                 creatingVerticalCoordinates(coordinateLetter, coordinateNumber);
                 creatingVerticalCoordinatesLeftCurrentOne(coordinateLetter, coordinateNumber);
@@ -126,7 +126,7 @@ public class CoordinatesAroundFutureShip {
         coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber - 1));
     }
 
-    private static class CoordinatesGroups {
+    private static class CoordinateGroups {
 
         static boolean mostAngular(String coordinate) {
             if (coordinate.equals(TOP_LEFT_COORDINATE) || coordinate.equals(BOTTOM_LEFT_COORDINATE)
