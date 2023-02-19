@@ -11,16 +11,16 @@ public class CoordinatesAroundFutureShip {
 
     private static final String TOP_LEFT_COORDINATE = String.format(
             "%s%s",
-            Board.MARKUP_TOP_LETTER_ASCII.getI(), Board.MARKUP_MIN_INTEGER.getI());
+            (char) Board.MARKUP_TOP_LETTER_ASCII.getI(), Board.MARKUP_MIN_INTEGER.getI());
     private static final String BOTTOM_LEFT_COORDINATE = String.format(
             "%s%s",
-            Board.MARKUP_BOTTOM_LETTER_ASCII.getI(), Board.MARKUP_MIN_INTEGER.getI());
+            (char) Board.MARKUP_BOTTOM_LETTER_ASCII.getI(), Board.MARKUP_MIN_INTEGER.getI());
     private static final String TOP_RIGHT_COORDINATE = String.format(
             "%s%s",
-            Board.MARKUP_TOP_LETTER_ASCII.getI(), Board.MARKUP_MAX_INTEGER.getI());
+            (char) Board.MARKUP_TOP_LETTER_ASCII.getI(), Board.MARKUP_MAX_INTEGER.getI());
     private static final String BOTTOM_RIGHT_COORDINATE = String.format(
             "%s%s",
-            Board.MARKUP_BOTTOM_LETTER_ASCII.getI(), Board.MARKUP_MAX_INTEGER.getI());
+            (char) Board.MARKUP_BOTTOM_LETTER_ASCII.getI(), Board.MARKUP_MAX_INTEGER.getI());
 
     public CoordinatesAroundFutureShip(List<String> coordinates) {
         this.coordinates = coordinates;
@@ -36,27 +36,27 @@ public class CoordinatesAroundFutureShip {
 
                 if (shipCoordinate.equals(TOP_LEFT_COORDINATE)) {
 
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber));
                     coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber + 1));
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber + 1));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber + 1));
 
                 } else if (shipCoordinate.equals(BOTTOM_LEFT_COORDINATE)) {
 
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber));
                     coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber + 1));
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber + 1));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber + 1));
 
                 } else if (shipCoordinate.equals(TOP_RIGHT_COORDINATE)) {
 
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber));
                     coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber - 1));
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber - 1));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber - 1));
 
                 } else if (shipCoordinate.equals(BOTTOM_RIGHT_COORDINATE)) {
 
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber));
                     coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber - 1));
-                    coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber - 1));
+                    coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber - 1));
 
                 }
 
@@ -98,32 +98,32 @@ public class CoordinatesAroundFutureShip {
     }
 
     private void creatingVerticalCoordinates(char coordinateLetter, int coordinateNumber) {
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber));
     }
 
     private void creatingCoordinatesBelowCurrentOne(char coordinateLetter, int coordinateNumber) {
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber - 1));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber + 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber - 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber + 1));
     }
 
     private void creatingCoordinatesAboveCurrentOne(char coordinateLetter, int coordinateNumber) {
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber - 1));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber + 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber - 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber + 1));
     }
 
     private void creatingVerticalCoordinatesRightCurrentOne(char coordinateLetter, int coordinateNumber) {
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber + 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber + 1));
         coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber + 1));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber + 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber + 1));
     }
 
     private void creatingVerticalCoordinatesLeftCurrentOne(char coordinateLetter, int coordinateNumber) {
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter - 1, coordinateNumber - 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter - 1), coordinateNumber - 1));
         coordinatesAroundShip.add(String.format("%s%s", coordinateLetter, coordinateNumber - 1));
-        coordinatesAroundShip.add(String.format("%s%s", coordinateLetter + 1, coordinateNumber - 1));
+        coordinatesAroundShip.add(String.format("%s%s", (char) (coordinateLetter + 1), coordinateNumber - 1));
     }
 
     private static class CoordinateGroups {

@@ -33,7 +33,7 @@ class VerticalSequenceTest {
     }
 
     @Test
-    void willReturnTrueIfVertucalSequenceFromUpDown() {
+    void willReturnTrueIfVerticalSequenceFromUpDown() {
         String currentCoordinate = "B3";
         String pastCoordinate = "A3";
         int iterationNumber = 1;
