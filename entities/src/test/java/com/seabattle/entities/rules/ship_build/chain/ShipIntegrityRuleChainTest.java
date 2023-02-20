@@ -19,7 +19,7 @@ class ShipIntegrityRuleChainTest {
     @BeforeEach
     void setup() {
         shipIntegrityRuleChain = new ShipIntegrityRuleChain();
-        deckShips = List.of(new DeckShip(List.of(new Coordinate("")), List.of(new Coordinate(""))));
+        deckShips = List.of(new DeckShip(List.of(new Coordinate(""))));
         shipCoordinates = List.of(new Coordinate(""));
     }
 

@@ -1,5 +1,6 @@
 package com.seabattle.entities.dto;
 
+import java.util.Collections;
 import java.util.List;
 
 public class DeckShip {
@@ -8,9 +9,9 @@ public class DeckShip {
     private List<Coordinate> damageCoordinates;
     private boolean isSank;
 
-    public DeckShip(List<Coordinate> coordinates, List<Coordinate> damageCoordinates) {
+    public DeckShip(List<Coordinate> coordinates) {
         this.coordinates = coordinates;
-        this.damageCoordinates = damageCoordinates;
+        this.damageCoordinates = Collections.emptyList();
         this.isSank = false;
     }
 

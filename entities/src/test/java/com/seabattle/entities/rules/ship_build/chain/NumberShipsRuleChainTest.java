@@ -21,9 +21,9 @@ class NumberShipsRuleChainTest {
     void setup() {
         numberShipsRuleChain = new NumberShipsRuleChain();
         deckShips = List.of(
-                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2")), List.of(new Coordinate(""))),
-                new DeckShip(List.of(new Coordinate("C1"), new Coordinate("C2")), List.of(new Coordinate(""))),
-                new DeckShip(List.of(new Coordinate("D1"), new Coordinate("D2")), List.of(new Coordinate(""))));
+                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2"))),
+                new DeckShip(List.of(new Coordinate("C1"), new Coordinate("C2"))),
+                new DeckShip(List.of(new Coordinate("D1"), new Coordinate("D2"))));
         shipCoordinates = List.of(new Coordinate(""));
     }
 
