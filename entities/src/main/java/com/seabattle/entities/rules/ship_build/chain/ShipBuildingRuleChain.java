@@ -1,4 +1,8 @@
-package com.seabattle.entities.rules.build;
+package com.seabattle.entities.rules.ship_build.chain;
+
+import com.seabattle.entities.dto.Coordinate;
+import com.seabattle.entities.dto.DeckShip;
+import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
 
 import java.util.List;
 
@@ -15,9 +19,9 @@ abstract public class ShipBuildingRuleChain {
          return firstRule;
     }
 
-    public abstract boolean check(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate);
+    public abstract boolean check(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) throws ShipBuildingException;
 
-    protected boolean checkNext(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) {
+    protected boolean checkNext(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) throws ShipBuildingException {
         if (next == null) {
             return true;
         }
