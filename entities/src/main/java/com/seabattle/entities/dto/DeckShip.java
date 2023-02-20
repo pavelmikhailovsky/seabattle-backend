@@ -1,5 +1,6 @@
 package com.seabattle.entities.dto;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class DeckShip {
 
     public DeckShip(List<Coordinate> coordinates) {
         this.coordinates = coordinates;
-        this.damageCoordinates = Collections.emptyList();
+        this.damageCoordinates = new ArrayList<>();
         this.isSank = false;
     }
 

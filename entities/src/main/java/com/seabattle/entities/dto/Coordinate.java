@@ -1,5 +1,7 @@
 package com.seabattle.entities.dto;
 
+import java.util.Objects;
+
 public class Coordinate {
 
     private final String content;
@@ -21,5 +23,18 @@ public class Coordinate {
 
     public DeckShip getShipLink() {
         return shipLink;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinate that = (Coordinate) o;
+        return Objects.equals(content, that.content) && Objects.equals(shipLink, that.shipLink);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(content, shipLink);
     }
 }
