@@ -8,7 +8,7 @@ import java.util.List;
 public class ShipDamage implements HitShip {
 
     private DeckShip deckShip;
-    private final boolean isShipSank = true;
+    private final boolean IS_SHIP_SANK = true;
     private List<Coordinate> damageCoordinates;
     private List<Coordinate> coordinates;
 
@@ -28,7 +28,7 @@ public class ShipDamage implements HitShip {
         deckShip.setDamageCoordinates(damageCoordinates);
 
         if (coordinates.isEmpty()) {
-            deckShip.setSank(isShipSank);
+            deckShip.setSank(IS_SHIP_SANK);
         }
 
         return deckShip;
