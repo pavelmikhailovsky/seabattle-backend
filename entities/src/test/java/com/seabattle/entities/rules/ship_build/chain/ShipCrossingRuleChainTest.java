@@ -19,7 +19,7 @@ class ShipCrossingRuleChainTest {
     @BeforeEach
     void setup() {
         shipCrossingRuleChain = new ShipCrossingRuleChain();
-        deckShips = List.of(new DeckShip(List.of(new Coordinate("")), List.of(new Coordinate(""))));
+        deckShips = List.of(new DeckShip(List.of(new Coordinate(""))));
     }
 
     @Test

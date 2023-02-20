@@ -32,7 +32,7 @@ class DistanceBetweenShipsRuleChainTest {
 
         distanceBetweenShipsRuleChain = new DistanceBetweenShipsRuleChain(coordinatesAroundFutureShipMock);
         deckShips = List.of(
-                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2")), List.of(new Coordinate(""))));
+                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2"))));
         shipCoordinates = List.of(new Coordinate("B1"), new Coordinate("B2"));
     }
 
