@@ -6,7 +6,7 @@ import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
 
 import java.util.List;
 
-public interface ShipBuilding {
+public interface ShipBuildingRule {
 
     boolean canBuild(List<String> coordinates, List<DeckShip> deckShips, List<Coordinate> shipCoordinate) throws ShipBuildingException;
 }
