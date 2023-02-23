@@ -8,4 +8,6 @@ public interface CoordinateExtractor {
 
     List<Coordinate> getAll();
 
+    List<Coordinate> getAllMoves();
+
 }

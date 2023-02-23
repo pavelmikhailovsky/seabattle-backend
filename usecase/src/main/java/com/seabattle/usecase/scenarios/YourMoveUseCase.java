@@ -17,7 +17,7 @@ public class YourMoveUseCase implements YourMove {
 
     @Override
     public String execute(String coordinate) throws YourMoveUseCaseException {
-        List<Coordinate> yourMoveCoordinates = coordinateExtractor.getAll();
+        List<Coordinate> yourMoveCoordinates = coordinateExtractor.getAllMoves();
 
         for (Coordinate yourMoveCoordinate : yourMoveCoordinates) {
 
