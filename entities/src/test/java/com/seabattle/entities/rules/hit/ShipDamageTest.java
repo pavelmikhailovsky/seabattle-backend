@@ -20,9 +20,10 @@ class ShipDamageTest {
         Coordinate damageCoordinate = new Coordinate("A2");
 
         deckShip = new DeckShip(new ArrayList<>(shipCoordinates));
-        shipDamage = new ShipDamage(deckShip);
+        shipDamage = new ShipDamage();
 
-        DeckShip shipDeckAfterDamage = shipDamage.hit(new Coordinate("A2"));
+        shipDamage.hit(deckShip, new Coordinate("A2"));
+        DeckShip shipDeckAfterDamage = deckShip;
         Coordinate[] damageCoordinatesAfterDamage = shipDeckAfterDamage.getDamageCoordinates().toArray(new Coordinate[0]);
 
         assertArrayEquals(new Coordinate[] {damageCoordinate}, damageCoordinatesAfterDamage);

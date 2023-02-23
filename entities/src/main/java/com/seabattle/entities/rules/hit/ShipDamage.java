@@ -7,17 +7,12 @@ import java.util.List;
 
 public class ShipDamage implements HitShip {
 
-    private DeckShip deckShip;
     private final boolean IS_SHIP_SANK = true;
     private List<Coordinate> damageCoordinates;
     private List<Coordinate> coordinates;
 
-    public ShipDamage(DeckShip deckShip) {
-        this.deckShip = deckShip;
-    }
-
     @Override
-    public DeckShip hit(Coordinate shipCoordinate) {
+    public void hit(DeckShip deckShip, Coordinate shipCoordinate) {
         damageCoordinates = deckShip.getDamageCoordinates();
         coordinates = deckShip.getCoordinates();
 
@@ -31,6 +26,5 @@ public class ShipDamage implements HitShip {
             deckShip.setSank(IS_SHIP_SANK);
         }
 
-        return deckShip;
     }
 }
