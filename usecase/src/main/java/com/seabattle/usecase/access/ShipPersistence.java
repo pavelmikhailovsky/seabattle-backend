@@ -7,4 +7,6 @@ import java.util.List;
 public interface ShipPersistence {
 
     DeckShip save(List<String> coordinates);
+
+    void update(DeckShip deckShip);
 }
