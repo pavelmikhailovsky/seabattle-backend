@@ -5,5 +5,5 @@ import com.seabattle.entities.dto.DeckShip;
 
 public interface HitShip {
 
-    DeckShip hit(Coordinate shipCoordinate);
+    void hit(DeckShip deckShip, Coordinate shipCoordinate);
 }
