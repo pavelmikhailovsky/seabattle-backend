@@ -1,6 +1,8 @@
 package com.seabattle.usecase;
 
+import com.seabattle.usecase.dto.ResultMove;
+
 public interface OpponentsMove {
 
-    Coordinate execute(String coordinate);
+    ResultMove execute(String coordinate);
 }
