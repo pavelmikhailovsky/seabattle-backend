@@ -1,7 +1,5 @@
 package com.seabattle.usecase.dto;
 
-import com.seabattle.usecase.Result;
-
 public class ResultMove {
 
     private String coordinate;

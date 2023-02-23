@@ -1,4 +1,4 @@
-package com.seabattle.usecase;
+package com.seabattle.usecase.dto;
 
 public enum Result {
 

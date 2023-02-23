@@ -4,10 +4,10 @@ import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
 import com.seabattle.entities.rules.hit.HitShip;
 import com.seabattle.usecase.OpponentsMove;
-import com.seabattle.usecase.Result;
 import com.seabattle.usecase.access.CoordinateExtractor;
 import com.seabattle.usecase.access.CoordinatePersistence;
 import com.seabattle.usecase.access.ShipPersistence;
+import com.seabattle.usecase.dto.Result;
 import com.seabattle.usecase.dto.ResultMove;
 
 import java.util.List;
