@@ -11,6 +11,7 @@
     <modules>
         <module>entities</module>
         <module>usecase</module>
+        <module>rest</module>
     </modules>
 
     <properties>
