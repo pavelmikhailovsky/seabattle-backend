@@ -2,13 +2,14 @@ package com.seabattle.rest.errors;
 
 import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
 import com.seabattle.rest.endpoints.AddShipEndpoint;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
 
 @RestControllerAdvice(basePackageClasses = AddShipEndpoint.class)
 public class AddShipEndpointAdvice extends ResponseEntityExceptionHandler {
