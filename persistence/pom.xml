@@ -9,8 +9,8 @@
         <version>0.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>application</artifactId>
-    <groupId>com.seabattle.application</groupId>
+    <groupId>com.seabattle.persistence</groupId>
+    <artifactId>persistence</artifactId>
     <name>${project.groupId}-${project.version}</name>
 
     <packaging>jar</packaging>
@@ -18,8 +18,8 @@
     <dependencies>
 <!--        project-->
         <dependency>
-            <groupId>com.seabattle.rest</groupId>
-            <artifactId>rest</artifactId>
+            <groupId>com.seabattle.entities</groupId>
+            <artifactId>entities</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -27,21 +27,23 @@
             <artifactId>usecase</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
+
+<!--        hibernate-->
         <dependency>
-            <groupId>com.seabattle.entities</groupId>
-            <artifactId>entities</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.seabattle.persistence</groupId>
-            <artifactId>persistence</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
         </dependency>
 
 <!--        spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+<!--        db drivers-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
 

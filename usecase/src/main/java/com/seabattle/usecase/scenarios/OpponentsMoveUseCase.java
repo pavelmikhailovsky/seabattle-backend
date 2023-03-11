@@ -2,11 +2,11 @@ package com.seabattle.usecase.scenarios;
 
 import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
-import com.seabattle.entities.rules.hit.HitShip;
+import com.seabattle.entities.rules.hit.HitDeckShip;
 import com.seabattle.usecase.OpponentsMove;
 import com.seabattle.usecase.access.CoordinateExtractor;
 import com.seabattle.usecase.access.CoordinatePersistence;
-import com.seabattle.usecase.access.ShipPersistence;
+import com.seabattle.usecase.access.DeckShipPersistence;
 import com.seabattle.usecase.dto.Result;
 import com.seabattle.usecase.dto.ResultMove;
 
@@ -16,13 +16,13 @@ public class OpponentsMoveUseCase implements OpponentsMove {
 
     private CoordinateExtractor coordinateExtractor;
     private CoordinatePersistence coordinatePersistence;
-    private ShipPersistence shipPersistence;
-    private HitShip hitShip;
+    private DeckShipPersistence shipPersistence;
+    private HitDeckShip hitShip;
 
     public OpponentsMoveUseCase(CoordinateExtractor coordinateExtractor,
                                 CoordinatePersistence coordinatePersistence,
-                                ShipPersistence shipPersistence,
-                                HitShip hitShip) {
+                                DeckShipPersistence shipPersistence,
+                                HitDeckShip hitShip) {
         this.coordinateExtractor = coordinateExtractor;
         this.coordinatePersistence = coordinatePersistence;
         this.hitShip = hitShip;

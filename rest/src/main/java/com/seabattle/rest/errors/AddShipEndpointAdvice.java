@@ -1,7 +1,7 @@
 package com.seabattle.rest.errors;
 
-import com.seabattle.entities.rules.ship_build.exceptions.ShipBuildingException;
-import com.seabattle.rest.endpoints.AddShipEndpoint;
+import com.seabattle.entities.rules.ship_build.exceptions.DeckShipBuildingException;
+import com.seabattle.rest.endpoints.AddDeckShipEndpoint;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,11 +11,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
-@RestControllerAdvice(basePackageClasses = AddShipEndpoint.class)
+@RestControllerAdvice(basePackageClasses = AddDeckShipEndpoint.class)
 public class AddShipEndpointAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<?> handleEndpointException(HttpServletRequest request, ShipBuildingException ex) {
+    public ResponseEntity<?> handleEndpointException(HttpServletRequest request, DeckShipBuildingException ex) {
         HttpStatus status = getStatus(request);
         return new ResponseEntity<>(ex.getMessage(), status);
     }

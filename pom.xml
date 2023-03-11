@@ -13,6 +13,7 @@
         <module>usecase</module>
         <module>rest</module>
         <module>application</module>
+        <module>persistence</module>
     </modules>
 
     <properties>
