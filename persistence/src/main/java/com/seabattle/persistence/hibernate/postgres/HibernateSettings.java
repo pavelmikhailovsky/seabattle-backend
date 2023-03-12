@@ -1,7 +1,7 @@
 package com.seabattle.persistence.hibernate.postgres;
 
-import com.seabattle.persistence.entity.Coordinate;
-import com.seabattle.persistence.entity.DeckShip;
+import com.seabattle.persistence.entity.CoordinateEntity;
+import com.seabattle.persistence.entity.DeckShipEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -18,8 +18,8 @@ public class HibernateSettings {
     static {
         configuration = new Configuration();
 
-        configuration.addAnnotatedClass(DeckShip.class);
-        configuration.addAnnotatedClass(Coordinate.class);
+        configuration.addAnnotatedClass(DeckShipEntity.class);
+        configuration.addAnnotatedClass(CoordinateEntity.class);
 
         Properties settings = new Properties();
 
@@ -30,7 +30,7 @@ public class HibernateSettings {
         settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
 
         settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-        settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+        settings.put(Environment.HBM2DDL_AUTO, "create-update");
 
         configuration.setProperties(settings);
     }
