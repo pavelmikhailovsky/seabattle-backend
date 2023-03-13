@@ -4,5 +4,5 @@ import com.seabattle.entities.dto.Coordinate;
 
 public interface CoordinatePersistence {
 
-    String save(Coordinate coordinate);
+    String save(String coordinate);
 }

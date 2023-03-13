@@ -1,5 +1,6 @@
 package com.seabattle.persistence.hibernate.postgres;
 
+import com.seabattle.entities.dto.Coordinate;
 import com.seabattle.entities.dto.DeckShip;
 import com.seabattle.usecase.access.DeckShipExtractor;
 import com.seabattle.usecase.access.DeckShipPersistence;
@@ -14,7 +15,7 @@ public class DeckShipRepository implements DeckShipPersistence, DeckShipExtracto
     }
 
     @Override
-    public DeckShip save(List<String> coordinates) {
+    public DeckShip save(List<Coordinate> coordinates) {
         return null;
     }
 

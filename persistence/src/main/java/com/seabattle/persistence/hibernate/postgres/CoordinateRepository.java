@@ -31,7 +31,7 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
         }
 
         return coordinateEntities.stream()
-                .map((c) -> new Coordinate(c.getContent()))
+                .map((c) -> new Coordinate(c.getId(), c.getContent()))
                 .collect(Collectors.toList());
     }
 
@@ -48,12 +48,12 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
         }
 
         return coordinateEntities.stream()
-                .map((c) -> new Coordinate(c.getContent()))
+                .map((c) -> new Coordinate(c.getId(), c.getContent()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public String save(Coordinate coordinate) {
+    public String save(String coordinate) {
         return null;
     }
 }

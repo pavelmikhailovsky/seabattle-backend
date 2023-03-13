@@ -30,7 +30,7 @@ public class HibernateSettings {
         settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
 
         settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-        settings.put(Environment.HBM2DDL_AUTO, "create-update");
+        settings.put(Environment.HBM2DDL_AUTO, "update");
 
         configuration.setProperties(settings);
     }

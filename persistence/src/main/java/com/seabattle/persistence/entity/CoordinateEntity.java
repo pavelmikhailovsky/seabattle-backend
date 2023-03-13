@@ -1,36 +1,35 @@
 package com.seabattle.persistence.entity;
 
-import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
-@Entity
-@Table(name = "coordinate")
+import javax.persistence.*;
+import java.util.UUID;
+
+@Entity(name = "coordinate")
 public class CoordinateEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
+    private UUID id;
 
     @Column
     private String content;
     @ManyToOne
-    @Column
     private DeckShipEntity ship;
 
-    public CoordinateEntity() {}
+    protected CoordinateEntity() {}
 
-    public void setId(Long id) {
-        this.id = id;
+    public CoordinateEntity(String content) {
+        this.content = content;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public DeckShipEntity getShip() {

@@ -10,6 +10,7 @@ import com.seabattle.usecase.access.DeckShipExtractor;
 import com.seabattle.usecase.access.DeckShipPersistence;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddDeckShipUseCase implements AddDeckShip {
 
@@ -34,7 +35,11 @@ public class AddDeckShipUseCase implements AddDeckShip {
         List<Coordinate> shipCoordinates = coordinateExtractor.getAll();
 
         if (shipBuildingRule.canBuild(coordinates, deckShips, shipCoordinates)) {
-            deckShip = shipPersistence.save(coordinates);
+            deckShip = shipPersistence.save(
+                    coordinates.stream().
+                            map(Coordinate::new)
+                            .collect(Collectors.toList())
+            );
         }
 
         return deckShip;
