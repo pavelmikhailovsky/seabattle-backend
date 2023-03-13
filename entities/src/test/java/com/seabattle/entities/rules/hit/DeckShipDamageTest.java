@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +20,7 @@ class DeckShipDamageTest {
         List<Coordinate> shipCoordinates = List.of(new Coordinate("A1"), new Coordinate("A2"), new Coordinate("A3"));
         Coordinate damageCoordinate = new Coordinate("A2");
 
-        deckShip = new DeckShip(new ArrayList<>(shipCoordinates));
+        deckShip = new DeckShip(UUID.randomUUID(), new ArrayList<>(shipCoordinates));
         deckShipDamage = new DeckShipDamage();
 
         deckShipDamage.hit(deckShip, new Coordinate("A2"));

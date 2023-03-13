@@ -11,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +32,7 @@ class DistanceBetweenDeckShipsRuleChainTest {
 
         distanceBetweenShipsRuleChain = new DistanceBetweenDeckShipsRuleChain(coordinatesAroundFutureShipMock);
         deckShips = List.of(
-                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2"))));
+                new DeckShip(UUID.randomUUID(), List.of(new Coordinate("B1"), new Coordinate("B2"))));
         shipCoordinates = List.of(new Coordinate("B1"), new Coordinate("B2"));
     }
 

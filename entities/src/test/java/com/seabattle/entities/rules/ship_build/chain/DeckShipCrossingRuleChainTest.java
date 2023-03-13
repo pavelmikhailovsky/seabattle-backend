@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +20,7 @@ class DeckShipCrossingRuleChainTest {
     @BeforeEach
     void setup() {
         shipCrossingRuleChain = new DeckShipCrossingRuleChain();
-        deckShips = List.of(new DeckShip(List.of(new Coordinate(""))));
+        deckShips = List.of(new DeckShip(UUID.randomUUID(), List.of(new Coordinate(""))));
     }
 
     @Test

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,9 +21,9 @@ class NumberDeckShipsRuleChainTest {
     void setup() {
         numberShipsRuleChain = new NumberDeckShipsRuleChain();
         deckShips = List.of(
-                new DeckShip(List.of(new Coordinate("B1"), new Coordinate("B2"))),
-                new DeckShip(List.of(new Coordinate("C1"), new Coordinate("C2"))),
-                new DeckShip(List.of(new Coordinate("D1"), new Coordinate("D2"))));
+                new DeckShip(UUID.randomUUID(), List.of(new Coordinate("B1"), new Coordinate("B2"))),
+                new DeckShip(UUID.randomUUID(), List.of(new Coordinate("C1"), new Coordinate("C2"))),
+                new DeckShip(UUID.randomUUID(), List.of(new Coordinate("D1"), new Coordinate("D2"))));
         shipCoordinates = List.of(new Coordinate(""));
     }
 
