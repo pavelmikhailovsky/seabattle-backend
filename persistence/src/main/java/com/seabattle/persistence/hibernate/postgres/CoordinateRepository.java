@@ -9,14 +9,15 @@ import org.hibernate.Session;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CoordinateRepository implements CoordinateExtractor, CoordinatePersistence {
 
     private CriteriaBuilder criteriaBuilder;
     private CriteriaQuery<CoordinateEntity> criteriaQuery;
     private List<CoordinateEntity> coordinateEntities;
+    private List<Coordinate> coordinates = new ArrayList<>();
 
     @Override
     public List<Coordinate> getAll() {
@@ -28,11 +29,13 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
 
             criteriaQuery.select(root).where(criteriaBuilder.notEqual(root.get("ship"), null));
             coordinateEntities = session.createQuery(criteriaQuery).getResultList();
+
+            for (CoordinateEntity c : coordinateEntities) {
+                coordinates.add(c.getCoordinate());
+            }
         }
 
-        return coordinateEntities.stream()
-                .map((c) -> new Coordinate(c.getId(), c.getContent()))
-                .collect(Collectors.toList());
+        return coordinates;
     }
 
     @Override
@@ -45,11 +48,13 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
 
             criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("ship"), null));
             coordinateEntities = session.createQuery(criteriaQuery).getResultList();
+
+            for (CoordinateEntity c : coordinateEntities) {
+                coordinates.add(c.getCoordinate());
+            }
         }
 
-        return coordinateEntities.stream()
-                .map((c) -> new Coordinate(c.getId(), c.getContent()))
-                .collect(Collectors.toList());
+        return coordinates;
     }
 
     @Override
