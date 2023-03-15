@@ -1,11 +1,14 @@
 package com.seabattle.persistence.entity;
 
+import com.seabattle.entities.dto.Coordinate;
+import com.seabattle.entities.dto.DeckShip;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Entity(name = "deck_ship")
 public class DeckShipEntity {
@@ -46,5 +49,22 @@ public class DeckShipEntity {
 
     public List<CoordinateEntity> getCoordinates() {
         return coordinates;
+    }
+
+    public DeckShip getDeckShip() {
+        List<Coordinate> coordinates = getCoordinates().stream()
+                .map(CoordinateEntity::getCoordinate)
+                .collect(Collectors.toList());
+
+        List<Coordinate> damageCoordinates =  getDamageCoordinates().stream()
+                .map(CoordinateEntity::getCoordinate)
+                .collect(Collectors.toList());
+
+        return new DeckShip(
+                getId(),
+                coordinates,
+                damageCoordinates,
+                getIsSank()
+        );
     }
 }

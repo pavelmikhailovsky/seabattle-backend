@@ -1,5 +1,6 @@
 package com.seabattle.persistence.entity;
 
+import com.seabattle.entities.dto.Coordinate;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -38,5 +39,9 @@ public class CoordinateEntity {
 
     public void setShip(DeckShipEntity ship) {
         this.ship = ship;
+    }
+
+    public Coordinate getCoordinate() {
+        return new Coordinate(getId(), getContent());
     }
 }
