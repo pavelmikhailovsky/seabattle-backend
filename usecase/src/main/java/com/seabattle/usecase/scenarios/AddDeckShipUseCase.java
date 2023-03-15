@@ -22,11 +22,12 @@ public class AddDeckShipUseCase implements AddDeckShip {
 
     public AddDeckShipUseCase(DeckShipPersistence shipPersistence,
                               DeckShipExtractor shipExtractor,
-                              CoordinateExtractor coordinateExtractor) {
+                              CoordinateExtractor coordinateExtractor,
+                              DeckShipBuildingRule shipBuildingRule) {
         this.shipPersistence = shipPersistence;
         this.shipExtractor = shipExtractor;
         this.coordinateExtractor = coordinateExtractor;
-//        this.shipBuildingRule = shipBuildingRule;
+        this.shipBuildingRule = shipBuildingRule;
     }
 
     @Override

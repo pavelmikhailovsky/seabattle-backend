@@ -1,5 +1,6 @@
 package com.seabattle.application.configuration;
 
+import com.seabattle.entities.rules.ship_build.DeckShipBuildingRule;
 import com.seabattle.usecase.AddDeckShip;
 import com.seabattle.usecase.OpponentsMoveHistory;
 import com.seabattle.usecase.YourMoveHistory;
@@ -18,8 +19,9 @@ public class UseCaseConfiguration {
     @Bean
     public AddDeckShip addShip(DeckShipPersistence shipPersistence,
                                DeckShipExtractor shipExtractor,
-                               CoordinateExtractor coordinateExtractor) {
-        return new AddDeckShipUseCase(shipPersistence, shipExtractor, coordinateExtractor);
+                               CoordinateExtractor coordinateExtractor,
+                               DeckShipBuildingRule deckShipBuildingRule) {
+        return new AddDeckShipUseCase(shipPersistence, shipExtractor, coordinateExtractor, deckShipBuildingRule);
     }
 
     @Bean
