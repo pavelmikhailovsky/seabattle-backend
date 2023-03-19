@@ -27,7 +27,7 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
             criteriaQuery = criteriaBuilder.createQuery(CoordinateEntity.class);
             Root<CoordinateEntity> root = criteriaQuery.from(CoordinateEntity.class);
 
-            criteriaQuery.select(root).where(criteriaBuilder.notEqual(root.get("ship"), null));
+            criteriaQuery.select(root).where(criteriaBuilder.isNotNull(root.get("ship")));
             coordinateEntities = session.createQuery(criteriaQuery).getResultList();
 
             for (CoordinateEntity c : coordinateEntities) {
@@ -46,7 +46,7 @@ public class CoordinateRepository implements CoordinateExtractor, CoordinatePers
             criteriaQuery = criteriaBuilder.createQuery(CoordinateEntity.class);
             Root<CoordinateEntity> root = criteriaQuery.from(CoordinateEntity.class);
 
-            criteriaQuery.select(root).where(criteriaBuilder.equal(root.get("ship"), null));
+            criteriaQuery.select(root).where(criteriaBuilder.isNull(root.get("ship")));
             coordinateEntities = session.createQuery(criteriaQuery).getResultList();
 
             for (CoordinateEntity c : coordinateEntities) {

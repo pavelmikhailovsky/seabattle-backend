@@ -4,6 +4,7 @@ import com.seabattle.entities.dto.Coordinate;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity(name = "coordinate")
@@ -14,9 +15,9 @@ public class CoordinateEntity {
     @Column(updatable = false, nullable = false)
     private UUID id;
 
-    @Column
+    @Column(updatable = false, nullable = false)
     private String content;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private DeckShipEntity ship;
 
     protected CoordinateEntity() {}
@@ -43,5 +44,18 @@ public class CoordinateEntity {
 
     public Coordinate getCoordinate() {
         return new Coordinate(getId(), getContent());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CoordinateEntity that = (CoordinateEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(content, that.content) && Objects.equals(ship, that.ship);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, content, ship);
     }
 }

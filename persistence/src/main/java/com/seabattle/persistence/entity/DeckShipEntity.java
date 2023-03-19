@@ -18,11 +18,10 @@ public class DeckShipEntity {
     @Column(updatable = false, nullable = false)
     private UUID id;
 
-    @OneToMany(mappedBy = "ship", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "ship", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<CoordinateEntity> coordinates = new ArrayList<>();
 
-    @OneToMany(mappedBy = "ship", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Column(name = "damage_coordinate")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<CoordinateEntity> damageCoordinates = new ArrayList<>();
 
     @Column(name = "is_sank", columnDefinition = "boolean default false")
@@ -33,6 +32,11 @@ public class DeckShipEntity {
     public void addCoordinate(CoordinateEntity coordinateEntity) {
         coordinates.add(coordinateEntity);
         coordinateEntity.setShip(this);
+    }
+
+    public void addDamageCoordinate(CoordinateEntity coordinateEntity) {
+        coordinates.remove(coordinateEntity);
+        damageCoordinates.add(coordinateEntity);
     }
 
     public UUID getId() {
@@ -56,7 +60,10 @@ public class DeckShipEntity {
                 .map(CoordinateEntity::getCoordinate)
                 .collect(Collectors.toList());
 
-        List<Coordinate> damageCoordinates =  getDamageCoordinates().stream()
+        List<Coordinate> damageCoordinates;
+
+        if (getDamageCoordinates().isEmpty()) damageCoordinates = new ArrayList<>();
+        else damageCoordinates = getDamageCoordinates().stream()
                 .map(CoordinateEntity::getCoordinate)
                 .collect(Collectors.toList());
 
